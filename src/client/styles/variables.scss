@@ -1,0 +1,16 @@
+// variables
+$border-primary: 1px solid black;
+// @mixin
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    margin: 0 auto;
+}
+
+@mixin bodyProp {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

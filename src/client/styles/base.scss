@@ -1,0 +1,61 @@
+@import "./variables.scss";
+// follow this example.
+// body {
+//     @include bodyProp;
+//     .container-1 {
+//         border: $border-primary;
+//         width: 75%;
+//         margin: 0 auto;
+//         text-align: center;
+//         font-size: 30px;
+//     }
+//     .flex-box-container-1 {
+//         display: flex;
+//         border: 1px solid black;
+//         padding: 10px;
+//         flex-wrap: wrap;
+//         justify-content: space-around;
+//     }
+// }
+body {
+    @include flexCenter(column);
+    .container-1 {
+        font-size: 30px;
+        padding: 20px;
+        border: $border-primary;
+        font-weight: bold;
+    }
+    .container-2 {
+        @include flexCenter(row);
+        margin-top: 40px;
+        width: 40%;
+        padding: 30px;
+    }
+    .urlOpt {
+        font-size: 20px;
+        padding: 15px;
+        margin: 10px 10px;
+    }
+    button {
+        @include flexCenter(row);
+        font-size: 20px;
+        padding: 25px;
+    }
+    .textOpt {
+        font-size: 20px;
+        padding: 15px;
+        margin: 10px 10px;
+    }
+    .outcome {
+        font-size: 20px;
+        @include flexCenter(column);
+        padding: 20px;
+        margin-top: 15px;
+    }
+    footer {
+        font-size: 20px;
+        padding: 20px;
+        @include flexCenter(row);
+        border: grey solid 2px;
+    }
+}

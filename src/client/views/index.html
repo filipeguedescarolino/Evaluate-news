@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="/styles/resets.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/form.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+
+
+</head>
+
+<body>
+    <!-- First container including title and subtitle -->
+    <div class="container-1">
+        <div class="title">
+            Sentimental analysis app
+        </div>
+    </div>
+
+    <!-- <div class="container-2">
+        <form name="myForm">
+            <input type="radio" id="r1" name="rad1" value="URL"> URL
+            <input type="radio" id="r2" name="rad1" value="TEXT"> TEXT
+            <input type="submit" />
+        </form>
+    </div> -->
+
+    <form class="urlOpt " onsubmit="return Client.handleSubmit(event)">
+        <label for="url"> Check if the URL is correct </label>
+        <input type="text" id="url" name="input" value="" onblur="return Client.handleSubmit(event)" placeholder="Enter url">
+        <div id="error-message"> </div>
+        <input type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+    </form>
+
+
+    <form class="textOpt" onsubmit="return Client.handleSubmit2(event)">
+        <label for="text"> Copy and Paste the text </label>
+        <input type="text" name="" id="textBox" value="" onblur="return Client.handleSubmit2(event)" placeholder="Enter Text">
+        <input type="submit" name="" value="submit" onclick="return Client.handleSubmit2(event)" onsubmit="return Client.handleSubmit2(event)">
+    </form>
+
+
+    <div class="outcome ">
+        <div id="results ">
+            <p> Results will be here</p>
+            <div id="score-tag"></div>
+            <div id="agreement"></div>
+            <div id="subjectivity"></div>
+            <div id="confidence"></div>
+            <div id="irony"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Using the meaningcloudapi to analyse text/url <br> Copyrights: Filipe Carolino course: udacity</p>
+    </footer>
+
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js');
+            });
+        }
+    </script>
+
+</body>
+
+</html>
